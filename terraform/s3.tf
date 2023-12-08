@@ -64,6 +64,7 @@ resource "aws_s3_object" "static_website_files" {
   content_encoding = "utf-8"
 
   acl = "public-read"
+  depends_on = [ aws_s3_bucket_acl.static_website ]
 }
 
 output "website_url" {
